@@ -1,0 +1,4 @@
+include ':javajokelib'
+include ':javajokelib'
+include ':javajokelib'
+include ':app', ':backend'
