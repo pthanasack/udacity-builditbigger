@@ -1,4 +1,3 @@
-include ':javajokelib'
-include ':javajokelib'
+include ':myandroidlibrary'
 include ':javajokelib'
 include ':app', ':backend'

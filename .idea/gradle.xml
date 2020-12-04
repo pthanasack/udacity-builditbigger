@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/backend" />
             <option value="$PROJECT_DIR$/javajokelib" />
+            <option value="$PROJECT_DIR$/myandroidlibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

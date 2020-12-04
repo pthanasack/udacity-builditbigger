@@ -1,15 +1,19 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.udacity.gradle.javajokelib.JokeSmith;
+import com.udacity.gradle.myandroidlibrary.AndroidLibraryActivity;
+
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+        Intent jokeIntent = new Intent(this, AndroidLibraryActivity.class);
+        //jokeIntent.setComponent(new ComponentName("com.udacity.gradle.myandroidlibrary","com.udacity.gradle.myandroidlibrary.MainActivity"));
+        //jokeIntent.setComponent(new ComponentName("com.udacity.gradle.builditbigger","com.udacity.gradle.builditbigger.MainActivity"));
+        //jokeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        jokeIntent.putExtra(Intent.EXTRA_TEXT, JokeSmith.tellAHandCraftedJoke());
+        if (jokeIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(jokeIntent);
+        }
+        //Toast.makeText(this, ,Toast.LENGTH_SHORT).show();
     }
 
 
