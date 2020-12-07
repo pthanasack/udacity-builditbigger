@@ -43,19 +43,20 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
 
         context = params[0].first;
         name = params[0].second;
-
-        try {
+        return JokeSmith.tellAHandCraftedJoke();
+       /* try {
             return myApiService.sayHi(name).execute().getData();
+
         } catch (IOException e) {
             return e.getMessage();
-        }
+        }*/
     }
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+      //  Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         Intent jokeIntent = new Intent(context, AndroidLibraryActivity.class);
-        jokeIntent.putExtra(Intent.EXTRA_TEXT, name + ": " + JokeSmith.tellAHandCraftedJoke());
+        jokeIntent.putExtra(Intent.EXTRA_TEXT, "Hey " + name + ": " + result);
         context.startActivity(jokeIntent);
     }
 
