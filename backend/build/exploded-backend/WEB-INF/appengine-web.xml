@@ -7,4 +7,6 @@
     <system-properties>
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
     </system-properties>
+    <!-- had to add <runtime>java8</runtime> to avoid Error opening zip file or JAR manifest missing : C:\Users\Test\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\lib\agent\appengine-agent.jar-->
+    <runtime>java8</runtime>
 </appengine-web-app>

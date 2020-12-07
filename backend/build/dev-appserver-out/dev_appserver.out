@@ -1,0 +1,23 @@
+d?c. 06, 2020 9:54:46 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+INFOS: Overwriting system property key 'java.util.logging.config.file', value 'C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
+2020-12-06 21:54:46.743:INFO::main: Logging initialized @1885ms to org.eclipse.jetty.util.log.StdErrLog
+2020-12-06 21:54:46.960:WARN:oejs.AbstractConnector:main: Ignoring deprecated socket close linger time
+d?c. 06, 2020 8:54:47 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+AVERTISSEMENT: Your working directory, (D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend) is not equal to your 
+web application root (D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend\build\exploded-backend)
+You will not be able to access files from your working directory on the production server.
+
+2020-12-06 21:54:47.930:INFO:oejs.Server:main: jetty-9.4.34.v20201102; built: 2020-11-02T14:15:39.302Z; git: e46af88704a893fc12cb0e3bf46e2c7b48a009e7; jvm 1.8.0_242-release-1644-b01
+2020-12-06 21:54:53.225:INFO:oejsh.ContextHandler:main: Started c.g.a.t.d.j.DevAppEngineWebAppContext@d23e042{/,file:///D:/Dev/Udacity/udacity-android-dev-course/Gradle/ud867-master/FinalProject/backend/build/exploded-backend/,AVAILABLE}{D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend\build\exploded-backend}
+2020-12-06 21:54:53.228:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2020-12-06 21:54:53.228:INFO:oejs.session:main: node0 Scavenging disabled
+2020-12-06 21:54:53.271:INFO:oejs.AbstractConnector:main: Started NetworkTrafficSelectChannelConnector@185d8b6{HTTP/1.1, (http/1.1)}{localhost:8080}
+2020-12-06 21:54:53.284:INFO:oejs.Server:main: Started @8426ms
+d?c. 06, 2020 8:54:53 PM com.google.appengine.tools.development.AbstractModule startup
+INFOS: Module instance default is running at http://localhost:8080/
+d?c. 06, 2020 8:54:53 PM com.google.appengine.tools.development.AbstractModule startup
+INFOS: The admin console is running at http://localhost:8080/_ah/admin
+d?c. 06, 2020 9:54:53 PM com.google.appengine.tools.development.DevAppServerImpl doStart
+INFOS: Dev App Server is now running
+d?c. 06, 2020 9:55:06 PM com.google.appengine.tools.development.jetty9.LocalResourceFileServlet doGet
+AVERTISSEMENT: No file found for: /favicon.ico
