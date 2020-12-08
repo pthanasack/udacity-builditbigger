@@ -1,23 +1,30 @@
-d?c. 06, 2020 9:54:46 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+d?c. 08, 2020 3:38:47 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
 INFOS: Overwriting system property key 'java.util.logging.config.file', value 'C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
-2020-12-06 21:54:46.743:INFO::main: Logging initialized @1885ms to org.eclipse.jetty.util.log.StdErrLog
-2020-12-06 21:54:46.960:WARN:oejs.AbstractConnector:main: Ignoring deprecated socket close linger time
-d?c. 06, 2020 8:54:47 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
-AVERTISSEMENT: Your working directory, (D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend) is not equal to your 
-web application root (D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend\build\exploded-backend)
-You will not be able to access files from your working directory on the production server.
-
-2020-12-06 21:54:47.930:INFO:oejs.Server:main: jetty-9.4.34.v20201102; built: 2020-11-02T14:15:39.302Z; git: e46af88704a893fc12cb0e3bf46e2c7b48a009e7; jvm 1.8.0_242-release-1644-b01
-2020-12-06 21:54:53.225:INFO:oejsh.ContextHandler:main: Started c.g.a.t.d.j.DevAppEngineWebAppContext@d23e042{/,file:///D:/Dev/Udacity/udacity-android-dev-course/Gradle/ud867-master/FinalProject/backend/build/exploded-backend/,AVAILABLE}{D:\Dev\Udacity\udacity-android-dev-course\Gradle\ud867-master\FinalProject\backend\build\exploded-backend}
-2020-12-06 21:54:53.228:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
-2020-12-06 21:54:53.228:INFO:oejs.session:main: node0 Scavenging disabled
-2020-12-06 21:54:53.271:INFO:oejs.AbstractConnector:main: Started NetworkTrafficSelectChannelConnector@185d8b6{HTTP/1.1, (http/1.1)}{localhost:8080}
-2020-12-06 21:54:53.284:INFO:oejs.Server:main: Started @8426ms
-d?c. 06, 2020 8:54:53 PM com.google.appengine.tools.development.AbstractModule startup
-INFOS: Module instance default is running at http://localhost:8080/
-d?c. 06, 2020 8:54:53 PM com.google.appengine.tools.development.AbstractModule startup
-INFOS: The admin console is running at http://localhost:8080/_ah/admin
-d?c. 06, 2020 9:54:53 PM com.google.appengine.tools.development.DevAppServerImpl doStart
-INFOS: Dev App Server is now running
-d?c. 06, 2020 9:55:06 PM com.google.appengine.tools.development.jetty9.LocalResourceFileServlet doGet
-AVERTISSEMENT: No file found for: /favicon.ico
+2020-12-08 15:38:48.298:INFO::main: Logging initialized @1010ms to org.eclipse.jetty.util.log.StdErrLog
+2020-12-08 15:38:48.413:WARN:oejs.AbstractConnector:main: Ignoring deprecated socket close linger time
+java.io.IOException: Failed to bind to localhost/127.0.0.1:8080
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:349)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:310)
+	at com.google.appengine.tools.development.jetty9.JettyContainerService.connectContainer(JettyContainerService.java:333)
+	at com.google.appengine.tools.development.AbstractContainerService.createConnection(AbstractContainerService.java:268)
+	at com.google.appengine.tools.development.AbstractInstanceHolder.createConnection(AbstractInstanceHolder.java:37)
+	at com.google.appengine.tools.development.AbstractModule.createConnection(AbstractModule.java:73)
+	at com.google.appengine.tools.development.Modules.createConnections(Modules.java:99)
+	at com.google.appengine.tools.development.DevAppServerImpl.doStart(DevAppServerImpl.java:241)
+	at com.google.appengine.tools.development.DevAppServerImpl.access$000(DevAppServerImpl.java:44)
+	at com.google.appengine.tools.development.DevAppServerImpl$1.run(DevAppServerImpl.java:219)
+	at com.google.appengine.tools.development.DevAppServerImpl$1.run(DevAppServerImpl.java:217)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.google.appengine.tools.development.DevAppServerImpl.start(DevAppServerImpl.java:217)
+	at com.google.appengine.tools.development.DevAppServerMain$StartAction.apply(DevAppServerMain.java:404)
+	at com.google.appengine.tools.util.Parser$ParseResult.applyArgs(Parser.java:45)
+	at com.google.appengine.tools.development.DevAppServerMain.run(DevAppServerMain.java:257)
+	at com.google.appengine.tools.development.DevAppServerMain.main(DevAppServerMain.java:248)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:220)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:85)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	... 16 more

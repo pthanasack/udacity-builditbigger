@@ -9,27 +9,37 @@ import androidx.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(AndroidJUnit4.class)
 public class EndpointsAsyncTaskTest{
 
 
     @Test
-    public void testAsyncTestReturnString(){
+    public void testAsyncTestReturnString() throws Exception{
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        // track the AsyncTask is done with a CountDownLatch
+        final CountDownLatch countDownLatch = new CountDownLatch(1);
+        final String[] mResult = new String[1];
+
         EndpointsAsyncTask endpointsAsyncTask = (EndpointsAsyncTask) new EndpointsAsyncTask(){
             @Override
             protected void onPostExecute(String result) {
-                if (result != null) {
-                    assertTrue(result.length() > 0);
-                }
+                countDownLatch.countDown();
+                mResult[0] = result;
             }
 
-        }.execute(new Pair<Context, String>(appContext, "Manfred"));
+        };
 
+        endpointsAsyncTask.execute(new Pair<Context, String>(appContext, "Manfred"));
+        countDownLatch.await(60, TimeUnit.SECONDS);
+        assertNotNull(mResult[0]);
+        assertNotEquals("", mResult[0]);
     }
 
 

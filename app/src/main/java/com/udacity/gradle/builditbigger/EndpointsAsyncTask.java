@@ -20,7 +20,8 @@ import java.io.IOException;
 public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
-    private String name;
+
+
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
         if(myApiService == null) {  // Only do this once
@@ -42,21 +43,19 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
         }
 
         context = params[0].first;
-        name = params[0].second;
-        return JokeSmith.tellAHandCraftedJoke();
-       /* try {
+       String name = params[0].second;
+       try {
             return myApiService.sayHi(name).execute().getData();
-
         } catch (IOException e) {
-            return e.getMessage();
-        }*/
+            return "";
+        }
     }
 
     @Override
     protected void onPostExecute(String result) {
-      //  Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+      //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         Intent jokeIntent = new Intent(context, AndroidLibraryActivity.class);
-        jokeIntent.putExtra(Intent.EXTRA_TEXT, "Hey " + name + ": " + result);
+        jokeIntent.putExtra(Intent.EXTRA_TEXT, result);
         context.startActivity(jokeIntent);
     }
 
